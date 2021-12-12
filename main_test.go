@@ -1,25 +1,33 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 )
 
-func TestGreet(t *testing.T) {
-	value := Greet("Git")
-	fmt.Println(value)
+type TD struct {
+	value  string
+	expect string
 }
 
-func TestToUpper(t *testing.T) {
-	value := ToUpper("mukesh")
-	fmt.Println(value)
-	if value != "MUKESH" {
-		t.Fail()
+func TestGreet(t *testing.T) {
+	value := Greet("Git")
+	if value != "Hello Git!" {
+		t.Error("Error in here")
+	}
+}
+
+func Test(t *testing.T) {
+	testData := []TD{
+		{value: "mukesh", expect: "MUKESH"},
+		{value: "vikas", expect: "VIKAS"},
+		{value: "Vikas Sharma", expect: "VIKAS SHARMA"},
+		{value: "MUkesh", expect: "MUKESH"},
 	}
 
-	value2 := ToUpper("MUkesh")
-	fmt.Println(value2)
-	if value2 != "MUKESH" {
-		t.Errorf("Test Failed : want %v , got %v", "MUKESH", value2)
+	for _, td := range testData {
+		got := ToUpper(td.value)
+		if got != td.expect {
+			t.Errorf("Error %s | %s != %s ", td.value, td.expect, got)
+		}
 	}
 }

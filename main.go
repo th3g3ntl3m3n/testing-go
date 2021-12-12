@@ -15,7 +15,11 @@ func Greet(name string) string {
 func ToUpper(text string) string {
 	var newString = ""
 	for i := 0; i < len(text); i++ {
-		newString += (string(text[i] - (97 - 65)))
+		if text[i] >= 97 && text[i] <= (97+26) {
+			newString += (string(text[i] - (97 - 65)))
+		} else {
+			newString += (string(text[i]))
+		}
 	}
 	return newString
 }
