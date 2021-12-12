@@ -11,9 +11,9 @@ func TestGreet(t *testing.T) {
 }
 
 func TestToUpper(t *testing.T) {
-	value := ToUpper("vikas")
+	value := ToUpper("mukesh")
 	fmt.Println(value)
-	if value != "VIKAS" {
+	if value != "MUKESH" {
 		t.Fail()
 	}
 }
