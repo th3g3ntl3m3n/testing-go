@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	fmt.Println(Greet("Git"))
@@ -8,4 +11,8 @@ func main() {
 
 func Greet(name string) string {
 	return fmt.Sprintf("Hello %s!", name)
+}
+
+func ToUpper(text string) string {
+	return strings.ToUpper(text)
 }
