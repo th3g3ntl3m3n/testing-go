@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
@@ -14,5 +13,9 @@ func Greet(name string) string {
 }
 
 func ToUpper(text string) string {
-	return strings.ToUpper(text)
+	var newString = ""
+	for i := 0; i < len(text); i++ {
+		newString += (string(text[i] - (97 - 65)))
+	}
+	return newString
 }
