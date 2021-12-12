@@ -16,4 +16,10 @@ func TestToUpper(t *testing.T) {
 	if value != "MUKESH" {
 		t.Fail()
 	}
+
+	value2 := ToUpper("MUkesh")
+	fmt.Println(value2)
+	if value2 != "MUKESH" {
+		t.Errorf("Test Failed : want %v , got %v", "MUKESH", value2)
+	}
 }
