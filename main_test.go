@@ -16,7 +16,7 @@ func TestGreet(t *testing.T) {
 	}
 }
 
-func Test(t *testing.T) {
+func TestToUpper(t *testing.T) {
 	testData := []TD{
 		{value: "mukesh", expect: "MUKESH"},
 		{value: "vikas", expect: "VIKAS"},
