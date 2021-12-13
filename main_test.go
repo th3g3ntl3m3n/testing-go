@@ -21,13 +21,13 @@ func Test(t *testing.T) {
 		{value: "mukesh", expect: "MUKESH"},
 		{value: "vikas", expect: "VIKAS"},
 		{value: "Vikas Sharma", expect: "VIKAS SHARMA"},
-		{value: "MUkesh", expect: "MUKESH"},
+		{value: "MUkesH", expect: "MUKESH"},
 	}
 
 	for _, td := range testData {
 		got := ToUpper(td.value)
 		if got != td.expect {
-			t.Errorf("Error %s | %s != %s ", td.value, td.expect, got)
+			t.Errorf("Error TC: %s, Expected %s, Got %s ", td.value, td.expect, got)
 		}
 	}
 }
